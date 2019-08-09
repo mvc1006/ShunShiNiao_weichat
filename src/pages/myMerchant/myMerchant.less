@@ -1,0 +1,163 @@
+// out: false
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  	box-sizing: border-box;
+}
+.viewport{
+	position: relative;
+	max-width: 720px;
+	margin: 0 auto;
+	height: 100%;
+	color: @gray-text;
+	.pxRem(font-size,24);
+	.pxRem(padding-top,96);
+	background: @background-color;
+	.flex(column);
+	>div{
+		background: @white-color;
+	}
+}
+/* 头部 */
+.header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	.pxRem(line-height,56);
+	.pxRem(font-size,28);
+	.pxRem(padding,20);
+	.flex();
+	.alignItems();
+	.justifyContent(space-between);
+	z-index: 9999;
+	>div{
+		width: 100%;
+		text-align: center;
+	}
+	.go-back{
+		position: absolute;
+		.pxRem(left,30);
+	}
+	>.num{
+		position: absolute;
+		.pxRem(right,22);
+		.pxRem(font-size,22);
+		color: @gray-light-text;
+		>span{
+			color: @red-color;
+		}
+	}
+}
+// 排序
+.sort{
+	.pxRem(margin-top,16);
+	.flex();
+	.pxRem(line-height,76);
+	>div{
+		position: relative;
+		.flexGrow(1);
+		.flex();
+		.alignItems(center);
+		.justifyContent(center);
+		text-align: center;
+		&::after{
+			position: absolute;
+			content: '';
+			height: 50%;
+			width: 1px;
+			background: @background-color;
+			right: 0;
+			top: 25%;
+		}
+		>img{
+			.pxRem(width,16);
+			.pxRem(height,24);
+			.pxRem(margin-left,8)
+		}
+	}
+	>.active{
+		color: @red-color
+	}
+}
+.mescroll{
+	.pxRem(margin-top,18)
+}
+// 商家列表
+.merchant-list{
+	>.merchant-item{
+		.pxRem(padding,32);
+		.borderBottom(1);
+	}
+	.merchant-name{
+		.pxRem(font-size,28);
+		line-height: 1;
+		.pxRem(margin-bottom,32);
+		.flex();
+		.justifyContent(space-between);
+		>span{
+			.flex();
+			.alignItems(center)
+		}
+		img{
+			.pxRem(width,10);
+			.pxRem(margin-left,8)
+		}
+		>span:last-child{
+			.pxRem(font-size,24);
+			color: @gray-light-text
+		}
+	}
+	.merchant-data{
+		.flex();
+	}
+	.merchant-img{
+		.flexShrink(0);
+		.pxRem(width,136);
+		.pxRem(height,136);
+		.pxRem(border-radius,8);
+		overflow: hidden;
+		>span{
+			display: block;
+			.pxRem(width,136);
+			.pxRem(height,136);
+			background-repeat: no-repeat;
+			background-size: auto 100%;
+			background-position: center;
+		}
+	}
+	.merchant-explain{
+		.flex();
+		.flexWrap(wrap);
+		.flexGrow(1);
+		.pxRem(padding-left,20);
+		.pxRem(font-size,22);
+		color: @gray-light-text;
+		line-height: 1;
+		>div{
+			width: 100%;
+			.flex();
+			.alignItems();
+		}
+		span{
+			color: @red-color;
+			.pxRem(margin-left,16);
+		}
+	}
+}
+/* 没有订单 */
+.noShopList{
+	.pxRem(padding-top,50);
+	background: transparent !important;
+	>img{
+	  .pxRem(width,218);
+	  display: block;
+	  margin: 0 auto;
+	}
+	>.text{
+	  text-align: center;
+	  .pxRem(margin-top,30);
+	  .pxRem(font-size,24);
+	  color: @gray-light-text;
+	}
+  }

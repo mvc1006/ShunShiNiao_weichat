@@ -1,0 +1,37 @@
+// out :false
+@import './common.less';
+.header-top{
+    background: @white-color;
+    .pxRem(padding-left,20);
+    .pxRem(padding-right,20);
+    .flexGrow(0);
+    .borderBottom(2,@border-color);
+    .flex();
+    .alignItems();
+    .flexShrink(0);
+    .pxRem(height,96);
+    .back{
+        .flexGrow(0);
+        .pxRem(width,40);
+    }
+    .title{
+        .flexGrow(1);
+        .pxRem(line-height,96);
+        text-align: center;
+        .text;
+    }
+    .add-new{
+        .flexGrow(0);
+        .pxRem(line-height,96);
+        text-align: right;
+        .text;
+    }
+    .save-new{
+        .pxRem(font-size,24);
+        color: @red-color;
+    }
+    .text{
+        .pxRem(font-size,28);
+        color:@gray-text;
+    }
+}

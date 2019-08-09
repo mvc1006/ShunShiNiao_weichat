@@ -1,0 +1,225 @@
+// out: false
+@charset "utf-8";
+@import "common.less";
+// 商品列表
+.shop-list{
+	.pxRem(font-size,24);
+	color: @gray-text;
+	.flex();
+	.justifyContent(space-between);
+	.flexWrap(wrap);
+	.pxRem(padding,16);
+	background: @background-color !important;
+	box-sizing: border-box;
+	.pxRem(width,720);
+}
+.source {
+	.shop-item{
+		width: 100%;
+		.flex();
+		.flexWrap(wrap);
+		background-color: @white-color;
+		.pxRem(margin-bottom,16);
+		.pxRem(padding-top,20);
+		.pxRem(padding-right,18);
+		.pxRem(padding-bottom,16);
+		.pxRem(padding-left,14);
+		.pxRem(border-radius,8);
+	}
+	// 商品图片
+	.shop-img{
+		.flexShrink(0);
+		position: relative;
+		.pxRem(width,328);
+		.pxRem(height,328);
+		.pxRem(border-radius,8);
+		overflow: hidden;
+		>span{
+			display: block;
+			.pxRem(width,328);
+			.pxRem(height,328);
+			background-repeat: no-repeat;
+			background-size: auto 100%;
+			background-position: center;
+		}
+		>img{
+			position: absolute;
+			right: 0;
+			top: 0;
+			.pxRem(width,48);
+		}
+		.loot-all{
+			.pxRem(width,48);
+			.pxRem(left,114);
+			.pxRem(top,114);
+			.pxRem(width,92);
+			.pxRem(height,92);
+		}
+	}
+	// 商品内容
+	.shop-data{
+		.pxRem(font-size,20);
+		color: @gray-light-text;
+		.pxRem(max-width,328);
+		.flexGrow(1);
+		.flex(column);
+		.justifyContent(space-between);
+		.pxRem(padding-left,16);
+		box-sizing: border-box;
+	}
+	.shop-name{
+		.pxRem(line-height,36);
+		.pxRem(height,72);
+		.pxRem(font-size,24);
+		color: @gray-text;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+	}
+	.shop-new-price{
+		.pxRem(font-size,30);
+		color: @red-color;
+		font-weight: bold;
+	}
+	.shop-old-price{
+		text-decoration: line-through;
+	}
+	.shop-sold-out{
+		.flex();
+		.justifyContent(space-between);
+		.alignItems(flex-end);
+		>span{
+			.pxRem(line-height,40);
+			background: linear-gradient(to right,#FC6B9A, #E10D51);
+			.pxRem(border-radius,40);
+			.pxRem(padding-left,12);
+			.pxRem(padding-right,12);
+			color: @white-color;
+			&.active{
+				background: @gray-light-text;
+			}
+		}
+	}
+	.shop-into-shop{
+		.into-shop{
+			.pxRem(margin-left,20);
+			color: @simple-gray-color;
+		}
+		>img{
+			.pxRem(width,10);
+		}
+	}
+	.shop-hint{
+		.flex();
+		.alignItems(flex-start);
+		>img{
+			.pxRem(width,28);
+		}
+	}
+	// 赠品
+	.shop-present{
+		.pxRem(margin-top,22);
+		.borderTop(1,@gray-light-text,dashed)
+	}
+	// 一行两个
+	.shop-two{
+		.pxRem(width,336);
+		padding: 0;
+		.shop-img{
+			.pxRem(width,336);
+			.pxRem(height,336);
+			>span{
+				.pxRem(width,336);
+				.pxRem(height,336);
+			}
+		}
+		.shop-data{
+			.pxRem(padding,8);
+			padding-bottom: 0;
+		}
+		.shop-name{
+			.pxRem(height,36);
+			display: block;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.shop-new-price{
+			.flex();
+			.justifyContent(space-between);
+			.alignItems(flex-end);
+			.pxRem(font-size,26);
+		}
+		.shop-old-price{
+			.pxRem(font-size,20);
+			color: @gray-light-text;
+			text-decoration: line-through;
+			font-weight: normal;
+		}
+		.shop-sold-out{
+			display: initial;
+			.pxRem(font-size,20);
+			color: @gray-light-text;
+			font-weight: normal;
+		}
+		.shop-present{
+			.pxRem(margin-top,10);
+			.pxRem(padding-top,9);
+			.pxRem(padding-left,10);
+			.pxRem(padding-right,10);
+			.pxRem(padding-bottom,16);
+		}
+		.shop-present-item{
+			.pxRem(width,100);
+			.pxRem(height,100);
+			>span{
+				.pxRem(width,100);
+				.pxRem(height,100);
+			}
+		}
+		.shop-present-title{
+			.pxRem(padding-top,9);
+			.pxRem(padding-bottom,14);
+			>div:first-child{
+				.pxRem(font-size,20);
+			}
+		}
+		.shop-present-num{
+			
+			.pxRem(font-size,16);
+		}
+		.present{
+			.pxRem(padding-bottom,24);
+		}
+	}
+	// 赠品时
+	.present{
+		.shop-new-price{
+			font-weight: normal;
+			color: @gray-light-text;
+			.pxRem(font-size,20);
+			.alignItems(center);
+			span{
+				color: @red-color;
+				.pxRem(font-size,30);
+				text-decoration: line-through;
+			}
+			.shop-old-price{
+				color: @gray-text;
+				text-decoration: none !important;
+				.pxRem(font-size,20);
+			}
+		}
+		.shop-old-price{
+			color: @gray-text;
+			text-decoration: none !important;
+			.pxRem(font-size,26);
+		}
+		.shop-sold-out{
+			.flex();
+			.pxRem(padding-top,8);
+			.pxRem(padding-bottom,8);
+		}
+	}
+}

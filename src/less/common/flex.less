@@ -1,0 +1,127 @@
+//out:false
+.flex(@val:row){
+    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+    display: -moz-box; /* Firefox 17- */
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+    display: -moz-flex; /* Firefox 18+ */
+    display: -ms-flexbox; /* IE 10 */
+    display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+    /*
+        row:主轴为水平方向，项目沿主轴从左至右排列
+　　　  column：主轴为竖直方向，项目沿主轴从上至下排列
+　　　  row-reverse：主轴水平，项目从右至左排列，与row反向
+　　　  column-reverse：主轴竖直，项目从下至上排列，与column反向
+    */
+    -webkit-flex-direction: @val;
+    -moz-flex-direction: @val;
+    -ms-flex-direction: @val;
+    -o-flex-direction: @val;
+    flex-direction: @val;
+}
+/* 
+flex-wrap决定当排列不下时是否换行以及换行的方式
+nowrap：自动缩小项目，不换行
+wrap：换行，且第一行在上方
+wrap-reverse：换行，第一行在下面
+*/
+.flexWrap(@val:nowrap){
+    -webkit-flex-wrap: @val;
+    -moz-flex-wrap: @val;
+    -ms-flex-wrap: @val;
+    -o-flex-wrap: @val;
+    flex-wrap: @val;
+}
+/* 
+justify-content
+item 
+flex-start：左对齐
+flex-end：右对齐
+center：居中对齐
+space- between：两端对齐
+space-around：沿轴线均匀分布
+*/
+.justifyContent(@val:center){
+    -webkit-justify-content: @val;
+    -moz-justify-content: @val;
+    -ms-justify-content: @val;
+    -o-justify-content: @val;
+    justify-content: @val;
+}
+/*
+    align-items 
+    flex-start：顶端对齐
+　　flex-end：底部对齐
+　　center：竖直方向上居中对齐
+　　baseline：item第一行文字的底部对齐
+　　stretch：当item未设置高度时，item将和容器等高对齐
+*/
+.alignItems(@val:center){
+    -webkit-align-items: @val;
+    -moz-align-items: @val;
+    -ms-align-items: @val;
+    -o-align-items: @val;
+    align-items: @val;
+}
+
+/*
+    即item不止一行时，多行在交叉轴轴上的对齐方式。
+    注意当有多行时，定义了align-content后，align-items属性将失效。align-content可能值含义如下（假设主轴为水平方向）：
+　　flex-start：左对齐
+　　flex-end：右对齐
+　　center：居中对齐
+　　space- between：两端对齐
+　　space-around：沿轴线均匀分布
+　　stretch：各行将根据其flex-grow值伸展以充分占据剩余空间
+*/
+.alignContent(@val:center){
+    -webkit-align-content: @val;
+    -moz-align-content: @val;
+    -ms-align-content: @val;
+    -o-align-content: @val;
+    align-content: @val;
+}
+
+/*
+    flex-grow
+    定义了当flex容器有多余空间时，item是否放大。
+    默认值为0，即当有多余空间时也不放大；
+    可能的值为整数，表示不同item的放大比例
+*/
+.flexGrow(@val:0){
+    -webkit-flex-grow: @val;
+    -moz-flex-grow: @val;
+    -ms-flex-grow: @val;
+    -o-flex-grow: @val;
+    flex-grow:@val;
+}
+
+/*
+    flex-shrink
+    定义了当容器空间不足时，item是否缩小。
+    默认值为1，表示当空间不足时，item自动缩小，
+    其可能的值为整数，表示不同item的缩小比例
+*/
+.flexShrink(@val:1){
+    -webkit-flex-shrink: @val;
+    -moz-flex-shrink: @val;
+    -ms-flex-shrink: @val;
+    -o-flex-shrink: @val;
+    flex-shrink:@val;
+}
+/*
+    align-self属性允许item有自己独特的在交叉轴上的对齐方式
+　　auto：和父元素align-self的值一致
+　　flex-start：顶端对齐
+　　flex-end：底部对齐
+　　center：竖直方向上居中对齐
+　　baseline：item第一行文字的底部对齐
+　　stretch：当item未设置高度时，item将和容器等高对齐
+*/
+
+.alignSelf(@val:auto){
+    -webkit-align-self: @val;
+    -moz-align-self: @val;
+    -ms-align-self: @val;
+    -o-align-self: @val;
+    align-self:@val;
+}

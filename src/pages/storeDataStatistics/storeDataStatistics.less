@@ -1,0 +1,30 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  height: 100%;
+  color: @gray-text;
+}
+/* 头部 */
+.header{
+  position: relative;
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,16);
+}

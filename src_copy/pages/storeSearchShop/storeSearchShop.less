@@ -1,0 +1,137 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+  .pxRem(font-size,24);
+  .pxRem(padding-top,96);
+  >div{
+    background: @white-color;
+  }
+}
+/* 头部 */
+.header{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  .pxRem(line-height,48);
+  .pxRem(padding-top,26);
+  .pxRem(padding-bottom,22);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  .borderBottom(1);
+  z-index: 9999;
+  >.header-input{
+    .flex();
+    .alignItems();
+    margin: 0 auto;
+    .pxRem(width,544);
+    .pxRem(line-height,64);
+    .pxRem(height,64);
+    .pxRem(font-size,24);
+    .pxRem(border-radius,12);
+    background: #F2F1F0;
+    color: @gray-light-text;
+  }
+  .search-img{
+    .pxRem(margin-left,35);
+    .pxRem(margin-right,16)
+  }
+  .text{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  >.go-back{
+    position: absolute;
+    .pxRem(left,30);
+    .pxRem(width,16);
+  }
+}
+/* 商品列表 */
+.shop-item{
+  .pxRem(margin-top,20);
+  .pxRem(padding-top,25);
+  .pxRem(padding-left,30);
+  .pxRem(padding-bottom,30);
+  .pxRem(padding-right,25);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+}
+/* 商品图片 */
+.shop-img{
+  position: relative;
+  .pxRem(width,152);
+  .pxRem(height,152);
+  .flexShrink(0);
+  .pxRem(border-radius,10);
+  overflow: hidden;
+}
+/* 商品状态 */
+.shop-type{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(71,71,71,.6);
+  .pxRem(font-size,22);
+  color: @white-color;
+  .flex();
+  .alignItems();
+  .justifyContent();
+  >span{
+    .border(1, @white-color);
+    .pxRem(padding-left,10);
+    .pxRem(padding-right,10);
+    transform: rotate(-15deg);
+    opacity: .8;
+  }
+}
+/* 商品信息 */
+.shop-data{
+  .flexGrow(1);
+  .pxRem(padding-left,25);
+  .pxRem(padding-right,65);
+}
+/* 商品名称 */
+.shop-name{
+  .pxRem(font-size,22);
+  .pxRem(line-height,36);
+  .pxRem(height,72);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.shop-price{
+  color: @red-color;
+}
+/* 商品其他信息 */
+.shop-other{
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  .pxRem(font-size,20);
+  color: @gray-light-text;
+  >.add-time{
+    .pxRem(font-size,18);
+  }
+}
+/* 查看商品详情 */
+.look-details{
+  .pxRem(width,16);
+  .pxRem(height,28);
+}

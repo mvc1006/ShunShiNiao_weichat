@@ -1,0 +1,30 @@
+//out:false
+.borderRadius(@val:5,@name:border-radius){
+    .pxRem(@name,@val);
+}
+.border(@val:1,@color:@border-color,@type:solid){
+    .pxRem(border-width,@val);
+    border-style: @type;
+    border-color: @color;
+}
+
+.borderLeft(@val:1,@color:@border-color,@type:solid){
+    .pxRem(border-left-width,@val);
+    border-left-style: @type;
+    border-left-color: @color;
+}
+.borderRight(@val:1,@color:@border-color,@type:solid){
+    .pxRem(border-right-width,@val);
+    border-right-style: @type;
+    border-right-color: @color;
+}
+.borderTop(@val:1,@color:@border-color,@type:solid){
+    .pxRem(border-top-width,@val);
+    border-top-style: @type;
+    border-top-color: @color;
+}
+.borderBottom(@val:1,@color:@border-color,@type:solid){
+    .pxRem(border-bottom-width,@val);
+    border-bottom-style: @type;
+    border-bottom-color: @color;
+}

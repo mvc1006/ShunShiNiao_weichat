@@ -1,0 +1,190 @@
+// out: false
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+.viewport{
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  background: url("../../assets/storeBgImg.png") no-repeat;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+}
+/* 头部 */
+.header{
+  position: relative;
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  color: @white-color;
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  >.setting{
+    display: block;
+    .pxRem(width,50);
+    .pxRem(height,50);
+    background: url("../../assets/setting.png") no-repeat;
+    background-size: 100%;
+    position: absolute;
+    .pxRem(right,15);
+  }
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,40);
+  background-image: url("../../assets/white-back.png");
+}
+/* 店铺信息 */
+.store-area{
+  .pxRem(width,612);
+  margin: 0 auto;
+  .pxRem(margin-top,50);
+  .pxRem(padding,30);
+  .pxRem(border-radius,12 );
+  background: @white-color;
+  .flex();
+  box-shadow: 0 0.06944444rem 0.20833333rem #dfdfdf;
+}
+.store-img{
+  .pxRem(width,171);
+  .pxRem(height,171);
+  .flexShrink(0);
+}
+.store-data{
+  .flexGrow(1);
+  .pxRem(padding-left,40);
+  overflow: hidden;
+}
+/* 店铺名称 */
+.store-name{
+  .pxRem(font-size,28);
+  color: #010101;
+  .pxRem(margin-bottom,10);
+  .flex();
+  .justifyContent(space-between);
+  .alignItems();
+  span{
+    .pxRem(width,28);
+    .pxRem(height,16);
+    background: url(../../assets/bottomArrows.png) no-repeat;
+    background-size: 100%;
+  }
+}
+.store-time{
+  color: @gray-light-text;
+  .pxRem(font-size,22);
+}
+.trading-area{
+  color: @gray-light-text;
+  .pxRem(font-size,22);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  span{
+    color: @gray-text;
+  }
+}
+/* 店铺功能 */
+.store-actions{
+  .pxRem(width,612);
+  margin: 0 auto;
+  .pxRem(padding-top,60);
+  .flex();
+  .flexWrap(wrap);
+  .justifyContent(space-between);
+}
+/* 店铺功能列表 */
+.store-actions-item{
+  .pxRem(width,177);
+  .pxRem(border-radius,20);
+  .pxRem(margin-bottom,78);
+  >img{
+    .pxRem(width,177);
+    .pxRem(height,177);
+    .pxRem(border-radius,20);
+  }
+}
+/* 底部悬浮 */
+.foot-suspension{
+  position: fixed;
+  width: 100%;
+  .pxRem(bottom,90);
+  .flex();
+  .justifyContent(space-evenly);
+  >div{
+    .flex();
+    .alignItems();
+    .justifyContent(center);
+    background: linear-gradient(to right, #ff0f5c , #e10d51);
+    color: @white-color;
+    .pxRem(font-size,28);
+    .pxRem(line-height,70);
+    .pxRem(padding-left,15);
+    .pxRem(padding-right,15);
+    .pxRem(border-radius,35);
+    .pxRem(min-width,249);
+  }
+  img{
+    .pxRem(width,50);
+    .pxRem(height,50);
+    .pxRem(margin-right,10);
+  }
+}
+/* 选择商圈 */
+.select_trading_shade{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: @black-color;
+  opacity: .3;
+  z-index: 9999;
+}
+.select_trading{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: @white-color;
+  z-index: 9999;
+  .pxRem(border-top-left-radius,16);
+  .pxRem(border-top-right-radius,16);
+  >.select_trading_title{
+    text-align: center;
+    .pxRem(font-size,28);
+    line-height: 3;
+  }
+  >.select_trading_item{
+    .flex();
+    .justifyContent(space-between);
+    .alignItems();
+    .pxRem(padding-left,16);
+    .pxRem(padding-right,16);
+    .pxRem(font-size,28);
+    line-height: 3;
+    .borderBottom(1);
+    >.select_trading_type{
+      .pxRem(width,40);
+      .pxRem(height,40);
+      text-align: center;
+      .pxRem(line-height,40);
+      border-radius: 50%;
+      .border(1,@gray-light-text);
+      color: @white-color;
+      &.active{
+        border: none;
+        background: @red-color;
+      }
+    }
+  }
+}

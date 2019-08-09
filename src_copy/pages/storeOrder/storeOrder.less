@@ -1,0 +1,217 @@
+// out:false
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+  .pxRem(font-size,24);
+  .pxRem(padding-top,96);
+  >div{
+    background: @white-color;
+  }
+}
+/* 头部 */
+.header{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  .borderBottom(1);
+  background: @white-color;
+  z-index: 99999;
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,16);
+}
+/* 搜索区域 */
+.search-area{
+  position: relative;
+  .flex();
+  .pxRem(padding,20);
+  .justifyContent(space-between);
+  .alignItems(center);
+  .pxRem(line-height,64);
+  .delete{
+    position: absolute;
+    .pxRem(right,110);
+    .pxRem(width,24);
+  }
+  .search-name{
+    .flexGrow(1);
+    text-align: right;
+  }
+}
+.search{
+  .pxRem(width,601);
+  .flexShrink(0);
+  background: @background-color;
+  .flex();
+  justify-content: flex-start;
+  .alignItems();
+  .pxRem(font-size,26);
+  color: @gray-light-text;
+  .pxRem(padding-left,25);
+  .pxRem(border-radius,6);
+  .pxRem(line-height,64);
+  border: none;
+  >span{
+    .pxRem(padding-left,35);
+    .pxRem(padding-right,35);
+  }
+  >.store-search{
+    margin: 0;
+    padding: 0;
+  }
+}
+/* 切换菜单区域 */
+.cutMenu{
+  background: #ededed !important;
+  .flex();
+  //.pxRem(margin-top,20);
+  >div{
+    position: relative;
+    .pxRem(padding-top,15);
+    .pxRem(padding-bottom,15);
+    .flexGrow(1);
+    text-align: center;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 1px;
+      .pxRem(height,19);
+      background: @gray-light-text;
+      right: 0;
+      .pxRem(top,45)
+    }
+    &:last-child::after{
+      display: none;
+    }
+  }
+  .active{
+    background: @white-color;
+    color: @red-color;
+  }
+}
+/* 商品列表 */
+.store-shop-item{
+  .pxRem(margin-top,20);
+  .pxRem(padding-top,25);
+  .pxRem(padding-bottom,25);
+  .pxRem(padding-left,20);
+  .pxRem(padding-right,20);
+  .flex();
+  justify-content: space-between;
+  >.shop-img{
+    .flexShrink(0);
+    position: relative;
+    .pxRem(width,188);
+    .pxRem(height,188);
+    overflow: hidden;
+    >.corner-mark{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .main{
+      .pxRem(width,58);
+    }
+    .present{
+      .pxRem(width,62)
+    }
+  }
+  .shop-data{
+    .pxRem(padding-left,25);
+    .pxRem(width,410);
+    .flexGrow(1);
+    >.shop-name{
+      .flex();
+      justify-content: space-between;
+      .pxRem(font-size,22);
+      .pxRem(margin-bottom,10);
+      .pxRem(height,72);
+      .pxRem(line-height,36);
+      >span:first-child{
+        .pxRem(width,330);
+        .flexShrink(0);
+        flex-shrink: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      >div:last-child{
+        // color: #ff9629;
+        color: @red-color;
+        .pxRem(font-size,18);
+      }
+    }
+    >.shop-time{
+      .pxRem(font-size,20);
+      color: @gray-light-text;
+      .pxRem(margin-bottom,10);
+    }
+    >.shop-price{
+      .flex();
+      justify-content: space-between;
+      align-items: center;
+      color: @red-color;
+      .pxRem(font-size,18);
+      line-height: 1.3;
+      >.verify{
+        .pxRem(line-height,38);
+        background: @white-color;
+        .border(2,@red-color);
+        color: @red-color;
+        .pxRem(border-radius,6);
+        .pxRem(padding-left,20);
+        .pxRem(padding-right,20);
+        .pxRem(font-size,22);
+      }
+      span{
+        .pxRem(font-size,20);
+      }
+    }
+  }
+  .shop-state{
+    .flex();
+  }
+}
+/* 没有订单 */
+.not-available{
+  .pxRem(padding-top,50);
+  background: transparent !important;
+  >img{
+    .pxRem(width,218);
+    display: block;
+    margin: 0 auto;
+  }
+  >.text{
+    text-align: center;
+    .pxRem(margin-top,30);
+    .pxRem(font-size,24);
+    color: @gray-light-text;
+  }
+}
+

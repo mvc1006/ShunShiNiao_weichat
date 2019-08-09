@@ -1,0 +1,228 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: #e6e6e6;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+  .pxRem(font-size,24);
+  >div{
+    background: @white-color;
+  }
+}
+/* 头部 */
+.header{
+  position: relative;
+  .pxRem(line-height,48);
+  .pxRem(padding-top,26);
+  .pxRem(padding-bottom,22);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  .borderBottom(1);
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+  .flex();
+  .justifyContent()
+}
+.store-search{
+  position: absolute;
+  .pxRem(right,30);
+  .pxRem(width,50);
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,16);
+}
+.selectShopType>span{
+  display: block;
+  .pxRem(width,126);
+  text-align: center;
+  .border(3,@red-color);
+  color: @red-color;
+}
+.selectShopType>span:first-child{
+  .pxRem(border-top-left-radius,10);
+  .pxRem(border-bottom-left-radius,10);
+}
+.selectShopType>span:last-child{
+  .pxRem(border-top-right-radius,10);
+  .pxRem(border-bottom-right-radius,10);
+}
+.selectShopType>span.active{
+  background: @red-color;
+  color: @white-color;
+}
+/* 销售信息 */
+.market-data{
+  .flex();
+  .pxRem(margin-bottom,20);
+  >div{
+    .flexGrow(1)
+  }
+}
+.market-num{
+  font-weight: bold;
+}
+.market-data{
+  .pxRem(padding-left,100);
+}
+.make-bargain{
+  position: relative;
+}
+.make-bargain>.look-details{
+  position: absolute;
+  .pxRem(right,25);
+  .pxRem(top,25)
+}
+/* 切换菜单 */
+.cut-menu{
+  .flex();
+  .borderBottom(1,#d2d2d2);
+  >div{
+    .flexGrow(1);
+    text-align: center;
+    .flex();
+    .justifyContent();
+    >span{
+      display: block;
+      .pxRem(line-height,72);
+      .borderBottom(4,transparent);
+    }
+    >.active{
+      color: @red-color;
+      border-bottom-color: @red-color;
+    }
+  }
+}
+/* 排序 */
+.sort-type{
+  .flex();
+  .pxRem(line-height,75);
+  text-align: center;
+  >.sort-item{
+    .flexGrow(1);
+    position: relative;
+  }
+  .active{
+    color: @red-color;
+  }
+}
+.arrows{
+  position: absolute;
+  content: '';
+  .pxRem(right,70);
+  line-height: 1;
+  .border(6,transparent,solid);
+}
+
+.arrows-top{
+  .pxRem(top,20);
+  .borderBottom(10, #000, solid)
+}
+.active>.arrows-top{
+  border-bottom-color: @red-color;
+  opacity: .5;
+}
+.active>.arrows-top.active{
+  .borderBottom(10, @red-color, solid);
+  opacity: 1;
+}
+.arrows-bottom{
+  .pxRem(bottom,20);
+  .borderTop(10, #000, solid)
+}
+.active>.arrows-bottom{
+  border-top-color: @red-color;
+  opacity: .5;
+}
+.active>.arrows-bottom.active{
+  .borderTop(10, @red-color, solid);
+  opacity: 1;
+}
+/* 商品列表 */
+.shop-item{
+  .pxRem(margin-top,20);
+  .pxRem(padding-top,25);
+  .pxRem(padding-left,30);
+  .pxRem(padding-bottom,30);
+  .pxRem(padding-right,25);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+}
+/* 商品图片 */
+.shop-img{
+  position: relative;
+  .pxRem(width,152);
+  .pxRem(height,152);
+  .flexShrink(0);
+  .pxRem(border-radius,10);
+  overflow: hidden;
+}
+/* 商品状态 */
+.shop-type{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(71,71,71,.6);
+  .pxRem(font-size,22);
+  color: @white-color;
+  .flex();
+  .alignItems();
+  .justifyContent();
+  >span{
+    .border(1, @white-color);
+    .pxRem(padding-left,10);
+    .pxRem(padding-right,10);
+    transform: rotate(-15deg);
+    opacity: .8;
+  }
+}
+/* 商品信息 */
+.shop-data{
+  .flexGrow(1);
+  .pxRem(padding-left,25);
+  .pxRem(padding-right,65);
+}
+/* 商品名称 */
+.shop-name{
+  .pxRem(font-size,22);
+  .pxRem(line-height,36);
+  .pxRem(height,72);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.shop-price{
+  color: @red-color;
+}
+/* 商品其他信息 */
+.shop-other{
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  .pxRem(font-size,20);
+  color: @gray-light-text;
+  >.add-time{
+    .pxRem(font-size,18);
+  }
+}
+/* 查看商品详情 */
+.look-details{
+  .pxRem(width,16);
+  .pxRem(height,28);
+}

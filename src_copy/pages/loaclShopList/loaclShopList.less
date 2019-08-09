@@ -1,0 +1,116 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+  .pxRem(font-size,24);
+  >div{
+    background: @white-color;
+  }
+}
+/* 头部 */
+.header{
+  position: relative;
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between)
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,16);
+}
+/* 商铺信息 */
+.store-area{
+  .flex();
+  .justifyContent(space-between);
+  .pxRem(padding,20);
+  .borderBottom(1);
+  >.store-img{
+    .pxRem(width,112);
+    .pxRem(height,112);
+    .pxRem(border-radius,8);
+    .flexShrink(0);
+  }
+  >.store-data{
+    .flexGrow(1);
+    .pxRem(font-size,22);
+    color: @gray-light-text;
+    >div{
+      .flex();
+      .alignItems();
+    }
+  }
+  .store-name{
+    .pxRem(font-size,26);
+    color: @gray-text;
+  }
+  .store-ico,.site-img{
+    .pxRem(margin-right,16);
+  }
+  .site-img{
+    .pxRem(width,24);
+    .pxRem(height,24);
+  }
+}
+/* 商品区域 */
+.shop-list{
+  .pxRem(padding,20);
+  .pxRem(padding-left,68);
+}
+.shop-area{
+  .flex();
+  >.shop-img{
+    .flexShrink(0);
+    .pxRem(width,160);
+    .pxRem(height,160);
+    .pxRem(border-radius,8);
+    overflow: hidden;
+  }
+  >.shop-data{
+    .flexGrow(1);
+    .pxRem(padding-left,16);
+    min-width: 0;
+    >div{
+      .flex();
+      justify-content: space-between;
+      .alignItems();
+      >span:last-child{
+        color: @gray-light-text;
+        .pxRem(font-size,24);
+        .pxRem(min-width,75)
+      }
+    }
+    .shop-name{
+      .pxRem(font-size,28);
+      .pxRem(margin-bottom,20);
+      >span{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap
+      }
+    }
+    .shop-price{
+      line-height: 1;
+      .pxRem(margin-top,35);
+      .pxRem(font-size,36);
+      color: @red-color;
+    }
+  }
+}

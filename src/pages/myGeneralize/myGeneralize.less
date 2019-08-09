@@ -1,0 +1,48 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  .pxRem(font-size,24);
+  color: @gray-text;
+  .pxRem(padding-top,96)
+}
+/* 头部 */
+.header{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  background: @white-color;
+  >div{
+    width: 100%;
+    text-align: center;
+  }
+  .go-back{
+    position: absolute;
+    .pxRem(left,30);
+    .pxRem(width,16);
+  }
+}
+/* 推广图片 */
+.generalize-img{
+  width: 100%;
+  background: @white-color;
+  img{
+    width: 100%;
+  }
+}

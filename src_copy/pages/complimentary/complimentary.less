@@ -1,0 +1,49 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  .pxRem(padding-bottom,96)
+}
+.cont-top{
+  overflow: auto;
+}
+.cont-top>div{
+  background: @white-color;
+}
+// 商品组合
+.shopGroup{
+  position: fixed;
+  .pxRem(left,16);
+  .pxRem(bottom,112);
+  .pxRem(width,64);
+  .pxRem(height,64)
+}
+// 底部结算
+.footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  .flex();
+  justify-content: flex-end;
+  width: 100%;
+  .pxRem(line-height,96);
+  background: @white-color;
+}
+.submit{
+  background: @red-color;
+  color: @white-color;
+  .pxRem(width,160);
+  .pxRem(font-size,28);
+  .pxRem(margin-left,16);
+  text-align: center;
+}
+.total>span{
+  color: @red-color;
+}

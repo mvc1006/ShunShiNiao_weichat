@@ -1,0 +1,78 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+  .pxRem(font-size,24);
+  >div{
+    background: @white-color;
+  }
+}
+/* 头部 */
+.header{
+  position: relative;
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,16);
+}
+/* 资质信息 */
+.aptitude-list{
+  .pxRem(margin-top,20)
+}
+.aptitude-item{
+  .flex();
+  justify-content: space-between;
+  .alignItems();
+  .pxRem(line-height,96);
+  .pxRem(padding-left,20);
+  .pxRem(padding-right,16);
+  .borderBottom(1);
+  .store-name{
+    .pxRem(font-size,28);
+  }
+  .store-content{
+    color: @gray-light-text;
+  }
+}
+/* 资质图片 */
+.aptitude-img{
+  .pxRem(padding-left,20);
+  .pxRem(padding-right,20);
+  .pxRem(margin-top,20);
+  .aptitude-title{
+    .pxRem(line-height,96);
+    .pxRem(font-size,28);
+  }
+  .aptitude-img-list{
+    .flex();
+    .justifyContent(space-between);
+    .alignItems();
+    .pxRem(padding-bottom,58);
+    >img{
+      .flexShrink(0);
+      .pxRem(width,330);
+    }
+  }
+}
+

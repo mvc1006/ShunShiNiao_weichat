@@ -1,0 +1,58 @@
+// out: false
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+.container{
+  max-width: 720px;
+  margin: 0 auto;
+  background: @background-color;
+}
+.cont-top{
+  .flex(column);
+}
+// 遮罩
+.shade{}
+// 返回顶部
+.gotoTop{
+  position: fixed;
+  .pxRem(right,16);
+  .pxRem(bottom,112);
+  .pxRem(width,64);
+  .pxRem(height,64);
+  z-index: 9999;
+}
+// banner
+.banner img{
+  width: 100%;
+  .pxRem(height,240);
+}
+.banner .swiper-pagination{
+  .pxRem(padding-right,32);
+  .pxRem(bottom,16)
+}
+.banner .swiper-pagination-bullets .swiper-pagination-bullet{
+  float: right;
+  .pxRem(width,8);
+  .pxRem(height,8);
+  background: transparent;
+  border: 1px solid @white-color;
+  opacity: 1;
+  .pxRem(margin-left,4);
+  .pxRem(margin-right,4)
+}
+.banner .swiper-pagination-bullets .swiper-pagination-bullet-active{
+  background: @white-color;
+}
+// 主推荐
+.cont-top h2{
+  text-align: center;
+  color: @red-color;
+  background: @white-color;
+  font-weight: bold;
+  .pxRem(font-size,24);
+  .pxRem(line-height,80);
+  .pxRem(margin-top,20);
+}
+

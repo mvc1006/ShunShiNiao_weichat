@@ -1,0 +1,63 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+.viewport{
+  .pxRem(font-size,32);
+  color: @gray-text;
+}
+// 头部发返回
+.header{
+  .flex();
+  .alignItems();
+  .pxRem(line-height,96);
+  .pxRem(padding-left,30);
+  background: #484848;
+  color: #fff;
+  .title{
+    .flexGrow(1);
+    text-align: center;
+  }
+}
+// 支付成功
+.paySuccess{
+  .pxRem(padding-top,120);
+  text-align: center;
+  .img{
+    .pxRem(width,160);
+    .pxRem(height,160);
+    display: block;
+    margin: 0 auto;
+  }
+  .title{
+    font-weight: bold;
+    .pxRem(margin-top,40);
+    .pxRem(margin-bottom,40)
+  }
+  .content{
+    .pxRem(font-size,24);
+    .pxRem(padding-left,120);
+    .pxRem(padding-right,120);
+    .pxRem(line-height,36)
+  }
+}
+// 按钮
+.btn{
+  .flex();
+  .justifyContent(space-between);
+  .pxRem(margin,128);
+  color: @simple-gray-color;
+  .pxRem(line-height,80);
+  >div{
+    .pxRem(padding-left,36);
+    .pxRem(padding-right,36);
+    .pxRem(border-radius,8);
+  }
+  >.look-order{
+    .border(1,@simple-gray-color)
+  }
+  >.break-home{
+    background: @background-color;
+  }
+}

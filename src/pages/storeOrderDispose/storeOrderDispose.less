@@ -1,0 +1,225 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+  .pxRem(font-size,24);
+  .pxRem(padding-bottom,120);
+  overflow: auto;
+  >div{
+    background: @white-color;
+  }
+}
+/* 头部 */
+.header{
+  position: relative;
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between)
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,16);
+}
+/* 订单详情 */
+.order-details{
+  position: relative;
+  background: transparent !important;
+  .pxRem(padding-left,50);
+  .pxRem(padding-right,40);
+  .pxRem(margin-bottom,50);
+  overflow: hidden;
+  >div{
+    background: #fff;
+  }
+  >.line{
+    position: absolute;
+    .pxRem(left,50);
+    .pxRem(top,115);
+    height: 100%;
+    border-left: 1px dashed @gray-light-text;
+  }
+}
+/* 订单详情列表 */
+.order-item{
+  position: relative;
+  .pxRem(margin-left,65);
+  .pxRem(margin-top,37);
+  .pxRem(border-radius,10);
+  .pxRem(padding-top,20);
+  .pxRem(padding-left,24);
+  .pxRem(padding-bottom,28);
+  >div{
+    .pxRem(padding-right,20);
+  }
+  &::after{
+    position: absolute;
+    .pxRem(left,-95);
+    .pxRem(top,55);
+    content: '';
+    .borderLeft(55,transparent);
+    .borderBottom(30,transparent);
+    .borderRight(55,transparent);
+    .borderTop(30,transparent);
+    border-right-color: @white-color;
+  }
+  >.circle{
+    position: absolute;
+    .pxRem(left,-77);
+    .pxRem(top,72);
+    .pxRem(width,24);
+    .pxRem(height,24);
+    border-radius: 50%;
+    .border(1,transparent);
+    .pxRem(padding,4);
+    >div{
+      .pxRem(width,14);
+      .pxRem(height,14);
+      border-radius: 50%;
+      background: @gray-light-text;
+    }
+  }
+  .circle.active{
+    border-color: @red-color;
+    >div{
+      background: @red-color;
+    }
+  }
+  >.order-item-name{
+    .pxRem(font-size,20);
+    .borderBottom(1);
+    .pxRem(padding-bottom,20);
+    .pxRem(padding-top,10);
+    .pxRem(margin-bottom,15);
+  }
+  >.order-item-content{
+    .pxRem(font-size,18);
+    .pxRem(line-height,36);
+    color: @gray-light-text;
+  }
+  &:last-child .btn{
+    .borderTop(1)
+  }
+  .btn{
+    .flex();
+    .justifyContent(flex-end);
+    .pxRem(padding-top,25);
+    >span{
+      display: inline-block;
+      color: @red-color;
+      .border(2,@red-color);
+      .pxRem(line-height,50);
+      .pxRem(font-size,20);
+      .pxRem(padding-left,26);
+      .pxRem(padding-right,26);
+      .pxRem(border-radius,6);
+      .pxRem(margin-left,34);
+    }
+  }
+}
+/* 商品区域 */
+.shop-area{
+  .flex();
+  .borderBottom(1);
+  .pxRem(padding-bottom,28);
+  .pxRem(margin-bottom,15);
+  .shop-img{
+    .pxRem(width,134);
+    .pxRem(height,134);
+    .pxRem(border-radius,6);
+    overflow: hidden;
+    .flexShrink(0);
+  }
+  .shop-data{
+    .pxRem(padding-left,33);
+    .pxRem(padding-right,35);
+  }
+  .shop-name{
+    .flexGrow(1);
+    .pxRem(font-size,22);
+    .pxRem(height,48);
+    .pxRem(line-height,24);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .shop-time{
+    .pxRem(font-size,20);
+    color: @gray-light-text;
+  }
+  .shop-price{
+    .pxRem(font-size,18);
+    color: @red-color;
+    span{
+      .pxRem(font-size,24)
+    }
+  }
+}
+/* 图片凭证 */
+.img-voucher{
+  .flex();
+  .alignItems();
+  justify-content: space-between;
+  overflow: hidden;
+  >img{
+    display: block;
+    width: 30%;
+    .flexShrink(0);
+    .pxRem(margin-right,8);
+  }
+}
+/* 其他信息 */
+.other-data{
+  >.site{
+    .pxRem(font-size,18);
+  }
+  .refund{
+    color: @gray-light-text;
+    .pxRem(font-size,16);
+    .pxRem(line-height,38);
+  }
+  .equity{
+    .pxRem(margin-top,50);
+    .pxRem(margin-bottom,15);
+  }
+}
+.linkman{
+  .flex();
+  .justifyContent(space-between);
+  .pxRem(font-size,20);
+  >.phone{
+    .pxRem(font-size,18);
+  }
+}
+/* 查看订单详情 */
+.lookOrder{
+  position: fixed;
+  width: 75%;
+  left: 12.5%;
+  .pxRem(bottom,50);
+  text-align: center;
+  background: @red-color !important;
+  color: @white-color;
+  .pxRem(line-height,60);
+  .pxRem(font-size,24);
+  .pxRem(border-radius,8);
+}

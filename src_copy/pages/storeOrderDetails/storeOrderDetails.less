@@ -1,0 +1,248 @@
+// out:false
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+  .pxRem(font-size,24);
+  background: url("../../assets/storeOrderDispose.png") no-repeat;
+  background-size: 100%;
+  >div{
+    background: @white-color;
+  }
+}
+/* 头部 */
+.header{
+  position: relative;
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  color: @white-color;
+  background: transparent!important;
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,40);
+  background-image: url("../../assets/white-back.png");
+}
+/*标题 */
+.page-title{
+  .pxRem(padding,50);
+  background: transparent !important;
+  .pxRem(font-size,42);
+  color: @white-color;
+  font-weight: 500;
+}
+/* 人员信息 */
+.person-data{
+  .pxRem(margin-left,26);
+  .pxRem(margin-right,26);
+  .pxRem(padding,30);
+  .pxRem(padding-top,50);
+  .flex();
+  .alignItems(center);
+  .pxRem(border-radius,17);
+  box-shadow: 0 4px 15px rgba(140,131,131,.27);
+  >.location{
+    .pxRem(width,40);
+    .pxRem(height,40);
+    .flexShrink(0);
+  }
+  >.person-con{
+    .flexGrow(1);
+    .pxRem(padding-left,15);
+    .pxRem(font-size,24);
+  }
+  .consignee{
+    .flex();
+    .justifyContent(space-between);
+    .pxRem(margin-bottom,25);
+    .pxRem(font-size,26);
+  }
+}
+/* 商品组 */
+.shop-group{
+  .pxRem(padding-top,50);
+  .pxRem(padding-left,26);
+  .pxRem(padding-right,26);
+  .pxRem(padding-bottom,30);
+  .pxRem(margin-top,35);
+}
+/* 主商品 */
+.shop-main{
+  .flex();
+  .pxRem(padding-bottom,18);
+  .borderBottom(1,@gray-light-text,dashed);
+  .pxRem(margin-bottom,18);
+  .shop-main-img{
+    position: relative;
+    flex-shrink: 0;
+    .pxRem(width,188);
+    .pxRem(height,188);
+    .pxRem(border-radius,6);
+    overflow: hidden;
+    span{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  /* 主商品内容 */
+  .shop-main-data{
+    .pxRem(padding-left,28);
+    .flexGrow(1)
+  }
+  .shop-main-name{
+    .pxRem(padding-right,120);
+    .pxRem(height,72);
+    .pxRem(line-height,36);
+    .pxRem(font-size,22);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .shop-main-spe{
+    .pxRem(margin-bottom,35);
+    .pxRem(font-size,20);
+    color: @gray-light-text;
+  }
+  .shop-main-price{
+    .flex();
+    justify-content: space-between;
+    .alignItems();
+    .pxRem(font-size,18);
+    color: @red-color;
+    .num{
+      .pxRem(font-size,24);
+      font-weight: bold;
+    }
+    .line{
+      .pxRem(margin-left,20);
+      .pxRem(margin-right,20);
+    }
+  }
+  .shop-main-buyNum{
+    .pxRem(font-size,24);
+    color: @gray-text;
+  }
+}
+/* 赠品列表 */
+.present-list{
+  .pxRem(padding-top,28);
+  .present-title{
+    .flex();
+    .justifyContent(space-between);
+    .alignItems();
+    color: @red-color;
+    >img{
+      .pxRem(width,32);
+      .pxRem(height,32);
+      transform: rotate(180deg);
+    }
+  }
+}
+/* 赠品商品 */
+.present-item{
+  .pxRem(padding-top,25);
+  .pxRem(padding-bottom,35);
+  .present-store{
+    .pxRem(margin-bottom,15);
+    .flex();
+    .alignItems();
+    .pxRem(font-size,20);
+    >.store-ico{
+      .pxRem(margin-right,8)
+    }
+  }
+}
+/* 赠品商品信息 */
+.present-area{
+  .flex();
+  .present-img{
+    position: relative;
+    flex-shrink: 0;
+    .pxRem(width,114);
+    .pxRem(height,114);
+    .pxRem(border-radius,6);
+    span{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .present-data{
+    .flexGrow(1);
+    .pxRem(padding-left,20);
+    min-width: 0;
+    .flex(column);
+    justify-content: space-between;
+  }
+  .present-name{
+    .pxRem(font-size,22);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+  }
+  .present-spe{
+    .pxRem(font-size,18);
+    color: @gray-light-text;
+  }
+  .present-price{
+    .flex();
+    .pxRem(font-size,18);
+    color: @red-color;
+    .num{
+      .pxRem(font-size,24);
+      font-weight: bold;
+    }
+    .line{
+      .pxRem(margin-left,20);
+      .pxRem(margin-right,20);
+    }
+  }
+}
+/* 订单信息 */
+.order-data{
+  .pxRem(padding,26);
+  .pxRem(font-size,20);
+  .pxRem(line-height,48);
+  .pxRem(margin-top,20);
+  >div{
+    .flex();
+    .alignItems();
+  }
+}
+/* 收入 */
+.income-area{
+  .pxRem(padding,26);
+  .pxRem(margin-top,20);
+  >div{
+    .flex();
+    .justifyContent(space-between);
+  }
+  .income{
+    color: #020202;
+    .pxRem(margin-bottom,25);
+    >span:last-child{
+      color: @red-color;
+    }
+  }
+}

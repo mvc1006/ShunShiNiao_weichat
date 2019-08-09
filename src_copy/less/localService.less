@@ -1,0 +1,108 @@
+// out:false
+@import './common.less';
+
+body{
+    background: #F3F3F3;
+}
+.cont-top{
+    .flex(column);
+}
+.pro-top{
+    .flex();
+    .pxRem(padding-bottom,25);
+}
+.shop-present{
+    .borderTop(1,@border-color,dashed)
+}
+.pro-top.noBorder{
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.left-img{
+    position: relative;
+    .pxRem(width,200);
+    .pxRem(height,200);
+    .pxRem(border-radius,8);
+    overflow: hidden;
+    .corner-marker {
+      position: absolute;
+      right: 0;
+      top: 0;
+      .pxRem(width, 48);
+      .pxRem(height, 48)
+    }
+    .loot-all{
+        position: absolute;
+        .pxRem(width,92);
+        .pxRem(left,54);
+        .pxRem(top,54);
+    }
+    /*img{
+        width: 100%;
+        height:100%;
+    }*/
+    >span{
+      display: block;
+      .pxRem(width, 200);
+      .pxRem(height, 200);
+      background-position: center;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+    }
+    .flexGrow(0);
+    .alignItems();
+    .flexShrink(0);
+}
+.right-info{
+    .pxRem(padding-left,20);
+    .flexGrow(1);
+    .flex(column);
+    .justifyContent(space-between);
+}
+.pro-list-cont{
+    h2{
+        text-align: center;
+        background: @white-color;
+        font-weight: normal;
+        .pxRem(font-size,24);
+        .pxRem(line-height,80);
+        .pxRem(margin-top,20);
+        font-weight: bold;
+        color: @red-color;
+    }
+    .pro-list{
+        // background: @white-color;
+    }
+}
+.goods-area{
+    .flex();
+    .alignItems();
+    .justifyContent(space-between);
+    .goods-item{
+        .pxRem(width,120);
+        .pxRem(height,120);
+        .borderRadius(10);
+        overflow: hidden;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 2;
+           .give;
+        }
+        >span{
+          display: block;
+          .pxRem(width, 120);
+          .pxRem(height, 120);
+          background-position: center;
+          background-size: auto 100%;
+          background-repeat: no-repeat;
+        }
+    }
+}
+.goods-pro-tips{
+    .pxRem(margin-top,14);
+    .pxRem(margin-bottom,14);
+}

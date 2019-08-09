@@ -1,0 +1,117 @@
+// out:false
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  color: @gray-text;
+}
+// 顶部搜索区域
+.header{
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  .pxRem(padding-left,16);
+  .pxRem(padding-right,16);
+  .pxRem(padding-top,12);
+  .pxRem(padding-bottom,12);
+  .pxRem(line-height,72);
+  .pxRem(font-size,24);
+  background: @white-color;
+}
+.search{
+  position: relative;
+}
+.search>img{
+  position: absolute;
+  .pxRem(right,16);
+  .pxRem(top,26);
+  .pxRem(width,24);
+  .pxRem(height,24);
+  border-radius: 50%;
+}
+.search-img{
+  position: absolute;
+  .pxRem(left,32);
+  .pxRem(top,26);
+  z-index: 999;
+}
+.input{
+  position: relative;
+  display: block;
+  .pxRem(width,578);
+  .pxRem(height,72);
+  background: #F2F1F0;
+  color: @gray-light-text;
+  border: none;
+  .pxRem(border-radius,12);
+  .pxRem(padding-left,72);
+  .pxRem(font-size,24);
+}
+// 搜索历史
+.search-history{
+  .flex();
+  justify-content: space-between;
+  .pxRem(padding,16);
+  .pxRem(padding-top,32);
+  .pxRem(padding-bottom,24);
+  .pxRem(font-size,24);
+}
+.search-history>img{
+  .pxRem(width,30);
+  .pxRem(height,30);
+}
+// 历史记录列表
+.history-list{
+  .pxRem(padding-left,16);
+  .pxRem(padding-right,16px);
+  .flex();
+  .flexWrap(wrap);
+  .pxRem(max-height,204);
+  overflow: hidden;
+}
+.history-item{
+  display: block;
+  .pxRem(line-height,48);
+  .pxRem(padding-left,16);
+  .pxRem(padding-right,16);
+  .pxRem(margin-right,16);
+  .pxRem(margin-bottom,20);
+  .pxRem(font-size,20);
+  .pxRem(border-radius,30);
+  .pxRem(max-width,200);
+  color: @simple-gray-color;
+  background: #E5E5E5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+// 搜索列表
+.search-list{
+  background: #fff;
+}
+.search-item{
+  .flex();
+  justify-content: space-between;
+  align-items: center;
+  .pxRem(padding,32);
+  .pxRem(font-size,24);
+  color: @gray-light-text;
+  border-top: 1px solid @background-color;
+  >.text{
+    color: @gray-text;
+    >span{
+      color: @gray-light-text;
+    }
+  }
+}
+.search-item>img{
+  .pxRem(width,30);
+  .pxRem(height,30)
+}

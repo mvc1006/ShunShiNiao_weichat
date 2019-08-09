@@ -1,0 +1,291 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+  .pxRem(font-size,24);
+  .pxRem(padding-top,96);
+  >div{
+    background: @white-color;
+  }
+}
+.shade{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.3) !important;
+  z-index: 9999;
+}
+/* 头部 */
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between)
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,16);
+}
+// 收货地址
+.site{
+  .flex();
+  justify-content: space-between;
+  align-items: center;
+  .pxRem(padding-left,20);
+  .pxRem(padding-right,20);
+  .pxRem(padding-top,32);
+  .pxRem(padding-bottom,32);
+  .pxRem(min-height,120);
+  background: @white-color;
+  color: @gray-light-text;
+  .borderTop(1);
+}
+// 收货地址信息
+.consignee{
+  line-height: 1;
+  .flex();
+  color: @gray-text;
+}
+.consignee-data{
+  .flex();
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.site-data{
+  flex-grow: 1;
+  .pxRem(padding-left,16);
+  .pxRem(padding-right,30)
+}
+.consignee-site{
+  .pxRem(line-height,32);
+  .pxRem(font-size,20);
+  .pxRem(margin-top,35)
+}
+// 彩带
+.colouredRibbon{
+  display: block;
+  width: 100%;
+  .pxRem(height,8);
+  background: #fff;
+}
+/* 快递信息 */
+.expressage{
+  position: relative;
+  .pxRem(margin,20);
+  .pxRem(padding-left,51);
+  .pxRem(padding-right,51);
+  .pxRem(padding-top,30);
+  .pxRem(padding-bottom,30);
+  .expressage-input{
+    .flex();
+    .alignItems(center);
+    >.scan{
+      .pxRem(width,53);
+      .pxRem(margin-left,16);
+    }
+    >.delete{
+      position: absolute;
+      .pxRem(right,130);
+      .pxRem(width,24);
+    }
+  }
+  input{
+    .flexGrow(1);
+    .pxRem(line-height,54);
+    .pxRem(padding-left,30);
+    .pxRem(padding-right,40);
+    border: none;
+    .pxRem(border-radius,10);
+    .pxRem(font-size,24);
+    background: @background-color;
+    color: @gray-text;
+    &::-webkit-input-placeholder{
+      color: @gray-text;
+      .pxRem(font-size,24);
+    }
+  }
+}
+.expressage-data{
+  .flex();
+  .alignItems(center);
+  .pxRem(margin-top,35);
+  .pxRem(font-size,24);
+  .pxRem(border-radius,8);
+  color: @gray-text;
+  >img{
+    .pxRem(width,44);
+    .pxRem(margin-right,8);
+    border-radius: 50%;
+  }
+  .logistics-img{
+    .flex();
+    .alignItems(center);
+    .justifyContent(center);
+    .pxRem(width,44);
+    .pxRem(height,44);
+    .pxRem(margin-right,8);
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    >img{
+      .pxRem(width,25);
+    }
+  }
+}
+.expressage-title{
+  .flex();
+  .alignItems();
+  .pxRem(margin-bottom,16);
+  .pxRem(padding-top,16);
+  .pxRem(font-size,26);
+  >img{
+    .pxRem(width,26);
+    .pxRem(margin-right,15);
+  }
+}
+/* 快递公司列表 */
+.expressList{
+  position: absolute;
+  left: 0;
+  .pxRem(top,175);
+  // .pxRem(width,664);
+  width: 100%;
+  .pxRem(max-height,400);
+  .pxRem(padding-left,30);
+  .pxRem(padding-right,30);
+  // .pxRem(padding-right,30);
+  .pxRem(border-radius,10);
+  .pxRem(line-height,60);
+  .pxRem(font-size,24);
+  text-align: center;
+  color: @gray-text;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,.3);
+  overflow: auto;
+  z-index: 99999;
+}
+/* 订单详情 */
+.order-details{
+  .pxRem(padding-left,23);
+  .pxRem(padding-right,33);
+  .pxRem(margin-top,15);
+}
+/* 商品详情 */
+.shop-details{
+  .flex();
+  .pxRem(padding-bottom,24);
+  .borderBottom(1);
+  >.shop-img{
+    position: relative;
+    .flexShrink(0);
+    .pxRem(width,188);
+    .pxRem(height,188);
+    .pxRem(border-radius,10);
+    overflow: hidden;
+    >img{
+      width: 100%;
+    }
+    >span{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  >.shop-data{
+    .flexGrow(1);
+    .pxRem(padding-left,25);
+  }
+  .shop-title{
+    .pxRem(font-size,22);
+    .pxRem(line-height,26);
+    .pxRem(height,52);
+    .pxRem(margin-bottom,20);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .shop-spe{
+    color: @gray-light-text;
+    .pxRem(font-size,20);
+    .pxRem(margin-bottom,30);
+  }
+  .shop-price{
+    .flex();
+    .alignItems();
+    color: @red-color;
+    .pxRem(font-size,20);
+    span{
+      font-weight: bold;
+    }
+    .line{
+      .pxRem(margin-left,8);
+      .pxRem(margin-right,8);
+    }
+  }
+}
+/* 配送方式 */
+.dispatching{
+  .flex();
+  .justifyContent(space-between);
+  .alignItems();
+  .pxRem(line-height,75);
+  .pxRem(font-size,20);
+}
+/* 合计 */
+.total{
+  position: relative;
+  .pxRem(margin-top,20);
+  .pxRem(padding-left,23);
+  .pxRem(padding-right,33);
+  span:last-child{
+    .pxRem(font-size,24);
+    color: @red-color;
+  }
+  &::after{
+    position: absolute;
+    .pxRem(right,70);
+    .pxRem(top,-30);
+    content: '';
+    .border(15,transparent);
+    .borderLeft(10,transparent);
+    .borderRight(10,transparent);
+    border-bottom-color: @white-color;
+  }
+}
+/* 发货 */
+.shipments{
+  .pxRem(width,630);
+  .pxRem(line-height,73);
+  margin: 0 auto;
+  .pxRem(margin-top,50);
+  .pxRem(margin-bottom,20);
+  .pxRem(border-radius,10);
+  background: @red-color !important;
+  text-align: center;
+  .pxRem(font-size,20);
+  color: #fff;
+}

@@ -1,0 +1,90 @@
+// out: false
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  	box-sizing: border-box;
+}
+.viewport{
+	position: relative;
+	max-width: 720px;
+	margin: 0 auto;
+	height: 100%;
+	color: @gray-text;
+	.pxRem(font-size,24);
+	background: @background-color;
+	.flex(column);
+	>div{
+		background: @white-color;
+	}
+}
+/* 头部 */
+.header{
+	position: relative;
+	.pxRem(line-height,56);
+	.pxRem(font-size,28);
+	.pxRem(padding,20);
+	.flex();
+	.alignItems();
+	.justifyContent(space-between);
+	>div{
+		width: 100%;
+		text-align: center;
+	}
+	.go-back{
+		position: absolute;
+		.pxRem(left,30);
+	}
+}
+.mescroll{
+	.pxRem(margin-top,18)
+}
+// 明细列表
+.detail_item{
+	.flex();
+	.justifyContent(space-between);
+	.pxRem(padding-left,28);
+	.pxRem(padding-right,28);
+	.pxRem(padding-top,32);
+	.pxRem(padding-bottom,32);
+	.pxRem(font-size,28);
+	.borderBottom(1);
+	.price_explain{
+		>.price_time{
+			.pxRem(font-size,22);
+			color: @gray-light-text;
+		}
+	}
+	>.price{
+		.flex();
+		.alignItems();
+		.flexWrap(wrap);
+		text-align: right;
+		>div{
+			width: 100%;
+		}
+		.price_num{
+			font-weight: bold;
+			color: @red-color;
+		}
+		.price_type{
+			.pxRem(font-size,22);
+			color: @gray-light-text;
+		}
+	}
+}
+/* 没有订单 */
+.noShopList{
+	.pxRem(padding-top,50);
+	background: transparent !important;
+	>img{
+	  .pxRem(width,218);
+	  display: block;
+	  margin: 0 auto;
+	}
+	>.text{
+	  text-align: center;
+	  .pxRem(margin-top,30);
+	  .pxRem(font-size,24);
+	  color: @gray-light-text;
+	}
+}

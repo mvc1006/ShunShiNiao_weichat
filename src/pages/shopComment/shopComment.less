@@ -1,0 +1,46 @@
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @white-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  .pxRem(padding-bottom, 96);
+  .pxRem(font-size,24);
+  color: @gray-text;
+}
+// 头部
+.header{
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  color: @gray-text;
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+}
+.header>span{
+  width: 100%;
+  .flexShrink(0);
+  text-align: center;
+}
+.header>.go-back{
+  .pxRem(width,16)
+}
+/* 暂无评论 */
+.no-comment{
+  .pxRem(padding-top,130);
+  .pxRem(font-size,24);
+  color: @gray-light-text;
+  text-align: center;
+}
+.no-comment>img{
+  .pxRem(width,120);
+  .pxRem(height,120);
+  display: block;
+  margin: 0 auto;
+}

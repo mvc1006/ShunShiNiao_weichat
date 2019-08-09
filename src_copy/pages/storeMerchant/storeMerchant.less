@@ -1,0 +1,188 @@
+// out:false
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  .flex(column);
+  max-width: 720px;
+  margin: 0 auto;
+  background-size: 100%;
+  height: 100%;
+  color: @gray-text;
+  .pxRem(font-size,24);
+  .pxRem(padding-top,96);
+  >div{
+    background: @white-color;
+  }
+  .mescroll{
+    background: @background-color;
+  }
+}
+.shopScrollArea{
+    overflow: auto;
+    .flexGrow(1);
+}
+/* 加载 */
+.loading-area{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  >.loading{
+    .pxRem(margin-top,260)
+  }
+}
+/* 头部 */
+.header{
+  .pxRem(line-height,56);
+  .pxRem(font-size,28);
+  .pxRem(padding,20);
+  .flex();
+  .alignItems();
+  .justifyContent(space-between);
+  .borderBottom(1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.header>div{
+  width: 100%;
+  text-align: center;
+}
+.header>.go-back{
+  position: absolute;
+  .pxRem(left,30);
+  .pxRem(width,16);
+}
+/* 菜单 */
+.menu{
+  .flex();
+  .justifyContent(space-between);
+  .pxRem(padding-left,32);
+  .pxRem(padding-right,32);
+  .pxRem(height,84);
+  .flexGrow(0);
+  .flexShrink(0);
+  >div{
+    .flexShrink(0);
+    .pxRem(width,188);
+    .borderBottom(3,transparent);
+    .pxRem(line-height,64);
+    color: @gray-light-text;
+    text-align: center;
+  }
+  >.active{
+    .pxRem(font-size,32);
+    font-weight: bold;
+    color: @red-color;
+    border-color: @red-color;
+  }
+}
+.store-data{
+  .pxRem(margin-top,18);
+}
+// 商品选择区域
+.shopSelectArea{
+  // .borderTop(20,@background-color);
+}
+/* 商家信息 */
+.store-item{
+  .flex();
+  justify-content: space-between;
+  .alignItems();
+  .pxRem(line-height,96);
+  .pxRem(padding-left,20);
+  .pxRem(padding-right,16);
+  .borderBottom(1);
+  .store-name{
+    .pxRem(font-size,28);
+    .flexShrink(0);
+    .pxRem(padding-right,20);
+  }
+  .store-content{
+    color: @gray-light-text;
+    .pxRem(line-height,40);
+  }
+}
+/* 商家服务 */
+.store-sever{
+  .pxRem(margin-top,20);
+  .pxRem(padding-left,20);
+  .pxRem(padding-bottom,30);
+  .store-sever-title{
+    .pxRem(font-size,28);
+    .pxRem(padding-top,34);
+    .pxRem(padding-bottom,20);
+  }
+  .sever-list{
+    .flex();
+  }
+  span{
+    .pxRem(font-size,18);
+    color: @red-color;
+    .border(1,@red-color);
+    .pxRem(line-height,38);
+    .pxRem(padding-left,20);
+    .pxRem(padding-right,20);
+    .pxRem(margin-right,16);
+    .pxRem(border-radius,4)
+  }
+}
+/* 店铺启用规则 */
+.store-open{
+  .flex();
+  .justifyContent(space-between);
+  .alignItems();
+  .pxRem(margin-top,20);
+  .pxRem(padding,16);
+  .pxRem(padding-left,20);
+  .pxRem(font-size,28);
+  >.store-open-btn{
+    .flex();
+    .justifyContent(flex-start);
+    .alignItems();
+    .pxRem(width,114);
+    .pxRem(height,60);
+    .pxRem(padding-left,4);
+    .pxRem(padding-right,4);
+    .pxRem(border-radius,30);
+    background: @background-color;
+    transition: all .5s;
+    &.active{
+      background: @red-color;
+      .justifyContent(flex-end);
+    }
+    >div{
+      .pxRem(width,52);
+      .pxRem(height,52);
+      border-radius: 50%;
+      background: @white-color;
+    }
+  }
+}
+/* 移出商圈 */
+.outTrading{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  .pxRem(line-height,96);
+  color: @red-color;
+}
+.no-shopList{
+  background: @background-color !important;
+  color: @gray-light-text;
+  .pxRem(font-size,24);
+  .pxRem(margin-top,30);
+  text-align: center;
+}

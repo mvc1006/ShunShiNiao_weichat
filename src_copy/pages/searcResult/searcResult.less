@@ -1,0 +1,93 @@
+// out:false
+@charset "utf-8";
+@import "../../less/common.less";
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @background-color;
+}
+.viewport{
+  max-width: 720px;
+  margin: 0 auto;
+  color: @gray-text;
+  .flex(column);
+  height: 100%;
+}
+// 头部
+.header{
+  .flex();
+  .justifyContent(space-between);
+  .alignItems();
+  .pxRem(padding-left,16);
+  .pxRem(padding-right,16);
+  .pxRem(padding-top,12);
+  .pxRem(padding-bottom,12);
+  background: @white-color;
+  .flexShrink(0);
+  .text{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+}
+.header-logo{
+  .pxRem(width,64);
+  .pxRem(height,64);
+}
+.place-box{
+  text-align: center;
+  img{
+    .pxRem(width,32);
+    .pxRem(height,32);
+  }
+  p{
+    .pxRem(font-size,16);
+    .flex();
+    .alignItems(center);
+    >img{
+      .pxRem(width,16);
+      height: auto;
+      .pxRem(margin-left,8);
+    }
+  }
+}
+.header-input{
+  .flex();
+  .alignItems();
+  .pxRem(width,544);
+  .pxRem(line-height,72);
+  .pxRem(height,72);
+  .pxRem(font-size,24);
+  .pxRem(border-radius,12);
+  background: #F2F1F0;
+  color: @gray-light-text;
+}
+.search-img{
+  .pxRem(margin-left,35);
+  .pxRem(margin-right,16)
+}
+.header-style{
+  .pxRem(width,48);
+  .pxRem(height,48);
+}
+.shop-list{
+  flex-grow: 1;
+  overflow: auto;
+}
+// 返回顶部
+.viewport>.gotoTop{
+  .pxRem(bottom,40);
+}
+// 商品组
+.viewport .shopGroup-area{
+  .pxRem(bottom,40) !important;
+}
+// 暂无商品
+.no-shopList{
+  background: @background-color !important;
+  color: @gray-light-text;
+  .pxRem(font-size,24);
+  .pxRem(margin-top,30);
+  text-align: center;
+}
